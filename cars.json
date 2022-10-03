@@ -1,0 +1,16 @@
+[
+  {
+    "brand": "Toyota",
+    "model": "Avensis",
+    "price": 2000,
+    "year": 2000,
+    "description": "good car"
+  },
+  {
+    "brand": "Alfa Romeo",
+    "model": "GT",
+    "price": 2007,
+    "year": 2007,
+    "description": "good car"
+  }
+]
