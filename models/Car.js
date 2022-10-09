@@ -6,6 +6,7 @@ const carSchema = new Schema({
   price: { type: Number },
   year: { type: Number },
   description: { type: String },
+  accessories: { type: [Types.ObjectId], default: [], ref: 'Accessory' },
 });
 
 const Car = model('Car', carSchema);

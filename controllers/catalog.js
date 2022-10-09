@@ -12,7 +12,6 @@ catalogController.get('/', async (req, res) => {
 
 catalogController.get('/:id', async (req, res) => {
   const carId = req.params.id;
-  console.log(carId);
   const car = await getById(carId);
 
   if (car) {

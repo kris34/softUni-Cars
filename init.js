@@ -1,9 +1,12 @@
+const accessoryController = require('./controllers/accessory');
+const authController = require('./controllers/auth');
 const catalogController = require('./controllers/catalog');
 const createController = require('./controllers/create');
 const homeController = require('./controllers/home');
 
 async function start() {
   const express = require('express');
+  const cookieParser = require('cookie-parser');
   const hbs = require('express-handlebars').create({
     extname: '.hbs',
   });
@@ -18,6 +21,7 @@ async function start() {
   app.engine('.hbs', hbs.engine);
   app.set('view engine', '.hbs');
   app.use(express.urlencoded({ extended: true }));
+  app.use(cookieParser());
 
   await mongoose.connect(connStr, {
     useUnifiedTopology: true,
@@ -27,6 +31,8 @@ async function start() {
   app.use(homeController);
   app.use('/catalog', catalogController);
   app.use('/create', createController);
+  app.use('/accessory', accessoryController);
+  app.use('/auth', authController);
 
   app.listen(port, () => console.log(`App listening on port ${port}`));
 }

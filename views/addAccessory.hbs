@@ -1,0 +1,12 @@
+<h1>Add Accessory</h1>
+<h3>{{car.brand}} {{car.model}}</h3>
+<form action='/accessory/{{car._id}}/addCarAccessory' method='post'>
+  <ul>
+    {{#each accessories}}
+      <li>
+        <label><input type='checkbox' name='{{_id}}' />{{name}}</label>
+      </li>
+    {{/each}}
+  </ul>
+  <button>Comfirm</button>
+</form>
